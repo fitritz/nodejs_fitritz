@@ -1,22 +1,9 @@
+// db.js exports connection object directly ✅
+
+require("dotenv").config();
 const mongoose = require('mongoose');
-
 const mongoURL = process.env.MONGO_URL;
-
-mongoose.connect(mongoURL)
-
+mongoose.connect(mongoURL);
 const db = mongoose.connection;
-db.on('connected', () => {
-  console.log('MongoDB connected successfully');
-}); 
-db.on('error', (err) => {
-  console.log('MongoDB connection error:', err);
-});
-
-db.on('disconnected', () => {
-  console.log('MongoDB disconnected');
-  
-});
-
-module.exports = db;
-
-
+// ... event handlers
+module.exports = db;  // Object, not function
