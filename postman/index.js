@@ -85,7 +85,8 @@ app.delete("/users/:id", (req, res) => {
   res.json({ message: "User deleted successfully" });
 });
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(PORT, () => {
+  console.log("listening to port", PORT);
 });

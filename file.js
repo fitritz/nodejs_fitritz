@@ -4,3 +4,6 @@ console.log(data);
 fs.appendFileSync('read.txt', 'hello aditi');
 console.log('Data appended!');
 console.log
+
+
+  
